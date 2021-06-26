@@ -1,6 +1,6 @@
 # A github action for creating PDFs from github markdown
 
-This action creates PDF documents from github markdown
+his action creates PDF documents from github markdown
 
 ## Inputs
 
