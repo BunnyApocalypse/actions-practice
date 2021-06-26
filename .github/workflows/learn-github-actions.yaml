@@ -4,8 +4,6 @@ on:
     paths:
       - 'doc/**'
 
-name: CreatePDFs
-
 jobs:
   makepdfs:
     runs-on: ubuntu-latest
