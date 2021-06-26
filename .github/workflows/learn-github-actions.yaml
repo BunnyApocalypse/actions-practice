@@ -1,11 +1,21 @@
 name: learn-github-actions
-on: [push]
+on:
+  push:
+    paths:
+      - 'doc/**'
+
+name: CreatePDFs
+
 jobs:
-  check-bats-version:
+  makepdfs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
-      - run: echo "hello"
+      - uses: mkrakowitzer/actions-makepdfs@master
+        with:
+          markdown_dir: doc
+          output_dir: tmp
+      - uses: actions/upload-artifact@v2
+        with:
+          name: test-pdfs
+          path: tmp
